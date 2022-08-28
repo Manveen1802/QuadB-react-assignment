@@ -13,5 +13,5 @@ A application to book movie shows
     - npm start
  - Server will be up at your localhost, find the port number in same terminal
  - Open Browser and type below into addreass bar
-    - http://localhost: <port-number>
+    - http://localhost:{port-number}
  - Application will be up and running
