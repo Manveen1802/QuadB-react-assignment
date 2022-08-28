@@ -7,7 +7,7 @@ import MovieList from "./movie-list/movie-list";
 import MovieSummary from "./movie-summary/movie-summary";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (

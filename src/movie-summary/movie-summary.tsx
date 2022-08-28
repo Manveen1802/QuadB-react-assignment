@@ -11,6 +11,14 @@ const MovieSummary = () => {
     const [selectedMovie, setSelectedMovie] = useState<any>();
     const location: any = useLocation();
     const [showModal, setModalShow] = useState(false);
+    const [bookingDetails, setBookingDetails] = useState({
+        noOfSeats: '',
+        date: ''
+    });
+
+    /**
+     * Function to close modal
+     */
     const handleModalClose = () => {
         setModalShow(false);
         setBookingDetails({
@@ -18,11 +26,12 @@ const MovieSummary = () => {
             date: ''
         })
     }
+    /**
+     * Function to show modal
+     * @returns 
+     */
     const handleModalShow = () => setModalShow(true);
-    const [bookingDetails, setBookingDetails] = useState({
-        noOfSeats: '',
-        date: ''
-    });
+
 
     useEffect(() => {
         if (location.state.selectedMovie) {
@@ -32,10 +41,17 @@ const MovieSummary = () => {
             navigateToListPage();
     }, [location]);
 
+    /**
+     * Function to navigate to list page
+     */
     const navigateToListPage = () => {
         navigate('/movieList');
     }
 
+    /**
+     * Function to book the show
+     * @returns 
+     */
     const bookShow = () => {
         if (!bookingDetails.noOfSeats || parseInt(bookingDetails.noOfSeats) <= 0) {
             return toast.error("Please select atleast one seat", {
@@ -72,6 +88,10 @@ const MovieSummary = () => {
         }
     }
 
+    /**
+     * Function to set number of seats on change of input
+     * @param e : event
+     */
     const setNoofSeats = (e: any) => {
         if (e?.target?.value) {
             const oldBookingDetails = bookingDetails;
@@ -82,6 +102,10 @@ const MovieSummary = () => {
         }
     }
 
+    /**
+    * Function to set booking date on change of date picker
+    * @param e : event
+    */
     const setBookingDate = (e: any) => {
         if (e?.target?.value) {
             const oldBookingDetails = bookingDetails;

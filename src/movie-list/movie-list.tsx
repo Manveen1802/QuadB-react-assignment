@@ -11,6 +11,9 @@ const MovieList = () => {
         init();
     }, []);
 
+    /**
+     * Function to call on component initialize
+     */
     const init = async () => {
         getShowsList('all').then((res: any) => {
             if (res?.data?.length) {
@@ -23,9 +26,14 @@ const MovieList = () => {
         });
     }
 
+    /**
+     * Function to navigate to summary page
+     * @param movieObj : selected movie object
+     */
     const navigateToSummaryPage = (movieObj: any) => {
         navigate('/movieSummary', { state: { selectedMovie: movieObj } });
     }
+
     return (
         <>
             <div className="header d-flex w-100">
