@@ -1,0 +1,31 @@
+.header {
+    background-color: blue;
+    color: white;
+    padding: 1rem;
+}
+
+.show-list-wrapper {
+    padding: 1rem;
+}
+
+.show-wrapper {
+    border: 1px solid #cccccc;
+    margin-bottom: 1rem;
+}
+
+.show-wrapper .movie-name {
+    font-size: 2rem;
+    color: indianred;
+    font-weight: bold;
+}
+
+.show-wrapper .movie-description > .heading {
+    color: black;
+    font-weight: normal;
+}
+
+.show-wrapper .movie-description {
+    font-weight: bold;
+    font-style: italic;
+    color: gray;
+}
