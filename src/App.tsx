@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import MovieList from "./movie-list/movie-list";
 import MovieSummary from "./movie-summary/movie-summary";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
           <Route path="/movieSummary" element={<MovieSummary />} />
         </Routes>
       </main >
+      <ToastContainer />
     </Router >
   );
 }

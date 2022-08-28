@@ -10,8 +10,9 @@
 
 .summary-page-wrapper {
     border: 1px solid #cccccc;
-    background-color: aqua;
+    border-radius: 0.5rem;
     padding: 1rem;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 1), 0 15px 40px rgba(255, 255, 1, 0.1);
 }
 
 .summary-page-wrapper .movie-name {
@@ -19,4 +20,13 @@
     color: indianred;
     font-weight: bold;
     border: none;
+}
+
+.movie-booking-details .label {
+    font-weight: bold;
+    color: gray;
+}
+
+.movie-booking-details .value {
+    color: hotpink;
 }
