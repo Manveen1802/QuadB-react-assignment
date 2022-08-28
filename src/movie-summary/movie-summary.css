@@ -7,3 +7,16 @@
 .back-icon {
     cursor: pointer;
 }
+
+.summary-page-wrapper {
+    border: 1px solid #cccccc;
+    background-color: aqua;
+    padding: 1rem;
+}
+
+.summary-page-wrapper .movie-name {
+    font-size: 2rem;
+    color: indianred;
+    font-weight: bold;
+    border: none;
+}

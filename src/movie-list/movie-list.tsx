@@ -23,8 +23,8 @@ const MovieList = () => {
         });
     }
 
-    const navigateToSummaryPage = () => {
-        navigate('/movieSummary');
+    const navigateToSummaryPage = (movieObj: any) => {
+        navigate('/movieSummary', { state: { selectedMovie: movieObj } });
     }
     return (
         <>
@@ -62,7 +62,7 @@ const MovieList = () => {
                                                     <span className="heading"> Score :  </span>
                                                     {item.score}</div>
                                                 <div className="movie-actions pt-3">
-                                                    <button className="btn btn-primary" onClick={() => { navigateToSummaryPage() }}>Summary</button>
+                                                    <button className="btn btn-primary" onClick={() => { navigateToSummaryPage(item) }}>Summary</button>
                                                 </div>
                                             </div>
 
