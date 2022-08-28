@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getShowsList } from '../api/movie.api';
+import { useNavigate } from 'react-router-dom';
 import './movie-list.css';
 
 const MovieList = () => {
+    const navigate = useNavigate();
     const [showList, setShowList] = useState([]);
 
     useEffect(() => {
@@ -21,6 +23,9 @@ const MovieList = () => {
         });
     }
 
+    const navigateToSummaryPage = () => {
+        navigate('/movieSummary');
+    }
     return (
         <>
             <div className="header d-flex w-100">
@@ -33,9 +38,9 @@ const MovieList = () => {
                             {showList?.length && (
                                 showList.map((item: any) => {
                                     return (
-                                        <div className="row show-wrapper">
+                                        <div className="row show-wrapper" key={item?.show?.id}>
                                             <div className="col-12 col-md-6 col-lg-3 ps-0 pt-3 pt-md-0 d-flex justify-content-center justify-content-md-start">
-                                                <img src={item?.show?.image?.medium} alt="Movie Image" />
+                                                <img src={item?.show?.image?.medium} alt="Movie poster" />
                                             </div>
                                             <div className="col-12 col-md-6 col-lg-9 py-3">
                                                 <div className="movie-name">
@@ -57,7 +62,7 @@ const MovieList = () => {
                                                     <span className="heading"> Score :  </span>
                                                     {item.score}</div>
                                                 <div className="movie-actions pt-3">
-                                                    <button className="btn btn-primary">Summary</button>
+                                                    <button className="btn btn-primary" onClick={() => { navigateToSummaryPage() }}>Summary</button>
                                                 </div>
                                             </div>
 

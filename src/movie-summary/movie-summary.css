@@ -1,0 +1,9 @@
+.header {
+    background-color: blue;
+    color: white;
+    padding: 1rem;
+}
+
+.back-icon {
+    cursor: pointer;
+}
